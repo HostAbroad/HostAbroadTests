@@ -1,32 +1,27 @@
 package integrationTests;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 import java.util.ArrayList;
-
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
-import javax.persistence.Persistence;
 
 import org.junit.Test;
 
 import com.business.TUser;
 import com.business.User;
-import com.presentation.commands.CommandSearchHost;
+import com.presentation.commands.CommandSearchTraveler;
 import com.presentation.commands.Pair;
 
-public class CommandSearchHostTest {
-	private CommandSearchHost commandsh;
+public class CommandSearchTravelerTest {
+	private CommandSearchTraveler cst;
 
 	@Test
 	public void test() {
-		this.commandsh = new CommandSearchHost();
+		this.cst = new CommandSearchTraveler();
 		
 		Pair<Integer, Object> pair, command_pair;
 		ArrayList<User> original_list = new ArrayList<User>();
 		ArrayList<TUser> command_list;
-		User yo = new User("Jose", 5, "pruebas para buscar un host", true, false);
+		User yo = new User("Adri", 4, "pruebas para buscar un viajero", false, true);
 		
 		//Para crear un nuevo host en la base de datos manualmente
 //		EntityManagerFactory emf = Persistence.createEntityManagerFactory("HostAbroad");
@@ -45,7 +40,7 @@ public class CommandSearchHostTest {
 		
 		pair = new Pair(1, original_list);
 		//da igual lo que pases como transfer ya que esta funcion no lo utiliza
-		command_pair = this.commandsh.execute(0);
+		command_pair = this.cst.execute(0);
 		command_list = (ArrayList<TUser>) command_pair.getRight();
 		
 		assertEquals(pair.getLeft(), command_pair.getLeft());
@@ -56,7 +51,6 @@ public class CommandSearchHostTest {
 			assertEquals(command_list.get(i).getHost(), original_list.get(i).getHost());
 			assertEquals(command_list.get(i).getTraveler(), original_list.get(i).getTraveler());
 		}
-		
 	}
 
 }
