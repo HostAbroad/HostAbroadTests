@@ -1,4 +1,4 @@
-package integrationTests;
+﻿package integrationTests;
 
 import static org.junit.Assert.assertEquals;
 
@@ -21,10 +21,10 @@ public class ASSearchImpTest {
 	private ASSearchImp assearch;
 	
 	@Test
-	public void searchHostTest() { 
+	public void searchTravelerTest() {
 		ArrayList<TUser> returned = new ArrayList<TUser>();
 		ArrayList<User> original = new ArrayList<User>();
-		User yo = new User("Jose", 5, "pruebas para buscar un host", true, false);
+		User yo = new User("Adri", 4, "pruebas para buscar un viajero", false, true);
 		
 		this.assearch = (ASSearchImp) ASFactory.getInstance().createASSearch();
 		
@@ -40,7 +40,11 @@ public class ASSearchImpTest {
 //		em.close();
 //		emf.close();
 		
+<<<<<<< HEAD
 		returned = this.assearch.searchHost();
+=======
+		returned = this.assearch.searchTraveler();
+>>>>>>> origin/UnitIntegrationTestSearchTraveler
 		
 		//añadir todos los hosts que haya en nuestra aplicacion
 		original.add(yo);
@@ -52,6 +56,7 @@ public class ASSearchImpTest {
 			assertEquals(returned.get(i).getHost(), original.get(i).getHost());
 			assertEquals(returned.get(i).getTraveler(), original.get(i).getTraveler());
 		}
+<<<<<<< HEAD
 		
 	}
 
@@ -81,6 +86,7 @@ public class ASSearchImpTest {
 		assertEquals(yo.getRating(), returned.getRating(), 2);
 		assertEquals(yo.getHost(), returned.getHost());
 		assertEquals(yo.getTraveler(), returned.getTraveler());
+
 	}
 	
 }
