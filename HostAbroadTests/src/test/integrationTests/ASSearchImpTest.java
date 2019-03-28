@@ -40,11 +40,9 @@ public class ASSearchImpTest {
 //		em.close();
 //		emf.close();
 		
-<<<<<<< HEAD
-		returned = this.assearch.searchHost();
-=======
+
 		returned = this.assearch.searchTraveler();
->>>>>>> origin/UnitIntegrationTestSearchTraveler
+
 		
 		//añadir todos los hosts que haya en nuestra aplicacion
 		original.add(yo);
@@ -56,7 +54,7 @@ public class ASSearchImpTest {
 			assertEquals(returned.get(i).getHost(), original.get(i).getHost());
 			assertEquals(returned.get(i).getTraveler(), original.get(i).getTraveler());
 		}
-<<<<<<< HEAD
+
 		
 	}
 

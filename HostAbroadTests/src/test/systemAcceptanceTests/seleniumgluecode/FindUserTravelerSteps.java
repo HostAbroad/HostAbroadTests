@@ -16,7 +16,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import systemAcceptanceTests.pageObject.FindUser;
 
-public class FindUserHostSteps {
+public class FindUserTravelerSteps {
 	
 	private FindUser userPO = new FindUser();
 	
@@ -44,41 +44,29 @@ public class FindUserHostSteps {
 		FindUserHelper.clearDataBase();
 	}
 	
-	@Given("^el usuario navega hasta la pagina de search$")
-	public void el_usuario_navega_hasta_la_pagina_de_search() throws Throwable {
+	@Given("^el usuario navega hasta la pagina de search viajero$")
+	public void el_usuario_navega_hasta_la_pagina_de_search_viajero() throws Throwable {
 	    this.userPO.goToPage("http://localhost:8080/HostAbroad/search");
 	}
 
-	@When("^el usuario selecciona como tipo de usuario anfitrión$")
-	public void el_usuario_selecciona_como_tipo_de_usuario_anfitrión() throws Throwable {
-	    this.userPO.findSelectHostCheckBoxAndClickIt();
+	@When("^el usuario selecciona como tipo de usuario viajero$")
+	public void el_usuario_selecciona_como_tipo_de_usuario_viajero() throws Throwable {
+	    this.userPO.findSelectTravelerCheckBoxAndClickIt();
 	}
 
-	@When("^pulsa el botón de buscar$")
-	public void pulsa_el_botón_de_buscar() throws Throwable {
+	@When("^pulsa el botón de buscar viajero$")
+	public void pulsa_el_botón_de_buscar_viajero() throws Throwable {
 	    this.userPO.clickApply();
 	}
 
-	@Then("^el usuario podrá ver un listado con los anfitriones$")
-	public void el_usuario_podrá_ver_un_listado_con_los_anfitriones() throws Throwable {
+	@Then("^el usuario podrá ver un listado con los viajeros$")
+	public void el_usuario_podrá_ver_un_listado_con_los_viajeros() throws Throwable {
 		assertTrue(this.userPO.checkSearchHost());
 	}
 	
-	@Then("^mostrará mensaje indicando que no hay ningún anfitrión registrado\\.$")
-	public void mostrará_mensaje_indicando_que_no_hay_ningún_anfitrión_registrado() throws Throwable {
+	@Then("^mostrará mensaje indicando que no hay ningún viajero registrado\\.$")
+	public void mostrará_mensaje_indicando_que_no_hay_ningún_viajero_registrado() throws Throwable {
 	    assertTrue(this.userPO.checkEmptyResults());
 	}
-	
-	private void clearDataBase() {
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("HostAbroad");
-		EntityManager em = emf.createEntityManager();
-		em.getTransaction().begin();
-		String query = "delete from hostabroad.USER";
-		em.createNativeQuery(query).executeUpdate();
-		//don't know if it is needed
-		em.getTransaction().commit();
-		
-		em.close();
-		emf.close();
-	}
+
 }
