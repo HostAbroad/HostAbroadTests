@@ -21,7 +21,7 @@ public class FindUserTravelerSteps {
 	private FindUser userPO = new FindUser();
 	
 	@Before("@First")
-	public void clearDataBaseAndCreateANewHostBeforeSecond() {
+	public void clearDataBaseAndCreateANewTravelerBeforeSecond() {
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("HostAbroad");
 		EntityManager em = emf.createEntityManager();
 		em.getTransaction().begin();
