@@ -4,7 +4,7 @@ import org.openqa.selenium.WebElement;
 
 public class FindUser extends PageObject{
 	private final String CHECKBOX_HOST_ID = "checkBoxHost";
-	private final String CHECKBOX_TRAVELER_ID = "checkBoxTraveler";
+	private final String CHECKBOX_TRAVELER_ID = "checkBoxtraveler";
 	private final String ACCEPT_BTN_ID = "acceptButton";
 	private final String RESULTFIRST_ID = "card1";
 	private final String RESULT_NOTIFICACION_CLASS = ".v-Notification-caption";
