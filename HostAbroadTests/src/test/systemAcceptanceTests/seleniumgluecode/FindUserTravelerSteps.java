@@ -35,12 +35,12 @@ public class FindUserTravelerSteps {
 	
 	@After("@First")
 	public void clearDataBaseAfterFirst(){
-		FindUserHelper.clearDataBase();
+		DataBaseHelper.clearDataBase();
 	}
 	
 	@Before("@Second")
 	public void clearDataBaseBeforSecond() {
-		FindUserHelper.clearDataBase();
+		DataBaseHelper.clearDataBase();
 	}
 	
 	@Given("^el usuario navega hasta la pagina de search viajero$")

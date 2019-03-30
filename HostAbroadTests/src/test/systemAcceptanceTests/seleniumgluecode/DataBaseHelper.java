@@ -6,7 +6,7 @@ import javax.persistence.Persistence;
 
 import com.business.User;
 
-public class FindUserHelper {
+public class DataBaseHelper {
 
 
     public static void clearDataBase() {
