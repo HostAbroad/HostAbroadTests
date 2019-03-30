@@ -1,6 +1,5 @@
 package systemAcceptanceTests.seleniumgluecode;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import javax.persistence.EntityManager;
@@ -27,7 +26,7 @@ public class FindUserHostSteps {
 		em.getTransaction().begin();
 		String query = "delete from hostabroad.USER";
 		em.createNativeQuery(query).executeUpdate();
-		em.persist(new User("Test",2.0,"Test description",true));
+		em.persist(new User("Test",2.0,"Test description",true,false));
 		em.getTransaction().commit();
 		
 		em.close();
