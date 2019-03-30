@@ -2,7 +2,13 @@ package systemAcceptanceTests.pageObject;
 
 import org.openqa.selenium.WebElement;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class CreateUser extends PageObject {
+	
+	private final Logger logger = LoggerFactory.getLogger(CreateUser.class);
+	
 	
 	private final String TEXT_FIELD_FULL_NAME = "Full nameTextField";
 	private final String TEXT_FIELD_NICKNAME = "NicknameTextField";
@@ -72,6 +78,7 @@ public class CreateUser extends PageObject {
 	public boolean checkUserNotCreated() {
 		resultNotification = this.findByCssSelector(RESULT_NOTIFICACION_CLASS);
 		String resultText = this.resultNotification.getText();
+		logger.info(resultText);
 		return resultText.equals(this.REGISTER_FAILED_MESSAGE);
 	}
 	
