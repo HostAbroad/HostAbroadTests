@@ -10,7 +10,7 @@ import com.presentation.commands.CommandEnum.Commands;
 import com.presentation.controller.FactoryCommand;
 import com.presentation.controller.FactoryCommandImp;
 
-public class FactoryCommandImpTest_Place {
+public class FactoryCommandImpTestPlace {
 	private FactoryCommandImp fcommand;
 	
 	@Test

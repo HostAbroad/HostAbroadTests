@@ -20,7 +20,7 @@ import com.business.User;
 import com.business.ASFactory.ASFactory;
 import com.business.ASUser.ASUserImp;
 
-public class ASUserImpTest_Place {
+public class ASUserImpTestPlace {
 	private ASUserImp sauser;
 	
 	@Test
