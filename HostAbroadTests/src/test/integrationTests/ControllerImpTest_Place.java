@@ -14,7 +14,7 @@ import com.presentation.commands.Pair;
 import com.presentation.controller.Controller;
 import com.presentation.controller.ControllerImp;
 
-public class ControllerImpTest {
+public class ControllerImpTest_Place {
 	private ControllerImp controlador;
 
 	@Test

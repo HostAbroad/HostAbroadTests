@@ -11,7 +11,7 @@ import org.junit.Test;
 
 import com.business.User;
 
-public class UserTest {
+public class UserTest_Place {
 	private User myUser;
 	
 	@Test

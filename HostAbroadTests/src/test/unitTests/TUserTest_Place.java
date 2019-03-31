@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import com.business.TUser;
 
-public class TUserTest {
+public class TUserTest_Place {
 	private TUser myUser;
 
 	@Test
