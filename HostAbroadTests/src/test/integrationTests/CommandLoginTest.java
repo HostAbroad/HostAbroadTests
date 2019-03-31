@@ -7,22 +7,23 @@ import org.junit.Test;
 
 import com.business.TUser;
 import com.business.User;
+import com.presentation.commands.CommandEnum.Commands;
 import com.presentation.commands.CommandLogin;
 import com.presentation.commands.Pair;
+import com.presentation.controller.FactoryCommand;
 
 public class CommandLoginTest {
 	private CommandLogin command;
 
 	@Test
 	public void executeTest() {
-		this.command = new CommandLogin();
 		
 		Pair<Integer, Object> pair, command_pair;
-		TUser original = new TUser("Adri", "Adrian", "adri@gmail.com", "adri1", 5, "pruebas para login", false, true);
+		TUser original = new TUser("Prueba", "PruebaFull", "ivan@ucm.es", "1234", 5, "pruebas para login", true, false);
 		TUser returned;
 		
 		pair = new Pair(1, original);
-		command_pair = this.command.execute(original);
+		command_pair = FactoryCommand.getInstance().parseCommand(Commands.CommandLogin).execute(original);
 		
 		assertEquals(pair.getLeft(), command_pair.getLeft());
 		returned = (TUser) command_pair.getRight();
