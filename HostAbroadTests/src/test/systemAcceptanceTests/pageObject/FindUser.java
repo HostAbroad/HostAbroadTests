@@ -4,12 +4,14 @@ import org.openqa.selenium.WebElement;
 
 public class FindUser extends PageObject{
 	private final String CHECKBOX_HOST_ID = "checkBoxHost";
+	private final String CHECKBOX_TRAVELER_ID = "checkBoxtraveler";
 	private final String ACCEPT_BTN_ID = "acceptButton";
 	private final String RESULTFIRST_ID = "card1";
 	private final String RESULT_NOTIFICACION_CLASS = ".v-Notification-caption";
 	private final String NO_USERS_MESSAGE = "There are no users matching your criteria.";
 	
 	private WebElement checkBoxHost;
+	private WebElement checkBoxTraveler;
 	private WebElement acceptBtn;
 	private WebElement resultFirst;
 	private WebElement resultNotification;
@@ -17,6 +19,11 @@ public class FindUser extends PageObject{
 	public void findSelectHostCheckBoxAndClickIt() {
 		this.checkBoxHost = this.findById(this.CHECKBOX_HOST_ID);
 		this.checkBoxHost.click();
+	}
+	
+	public void findSelectTravelerCheckBoxAndClickIt() {
+		this.checkBoxTraveler = this.findById(this.CHECKBOX_TRAVELER_ID);
+		this.checkBoxTraveler.click();
 	}
 
 	public void clickApply() {
@@ -32,6 +39,11 @@ public class FindUser extends PageObject{
 	}
 	
 	public boolean checkEmptyResults() {
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		this.resultNotification = this.findByCssSelector(RESULT_NOTIFICACION_CLASS);
 		String resultText = this.resultNotification.getText();
 		this.quitDriver();

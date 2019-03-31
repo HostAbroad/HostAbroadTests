@@ -15,12 +15,13 @@ public class FactoryCommandImpTest {
 	@Test
 	public void test() {
 		this.fcommand = (FactoryCommandImp) FactoryCommand.getInstance();
-		Command csh = new CommandSearchHost();
-		Command csh_return = this.fcommand.parseCommand(Commands.CommandSearchHost);
 		
-		csh.setEventReturn(0);
+		Command cst = new CommandSearchTraveler();
+		Command cst_return = this.fcommand.parseCommand(Commands.CommandSearchTraveler);
 		
-		assertEquals(csh.getEventReturn(), csh_return.getEventReturn());
+		cst.setEventReturn(0);
+		
+		assertEquals(cst.getEventReturn(), cst_return.getEventReturn());
 	}
 
 }
