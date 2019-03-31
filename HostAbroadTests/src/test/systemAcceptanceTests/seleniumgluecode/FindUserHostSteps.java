@@ -1,6 +1,5 @@
 package systemAcceptanceTests.seleniumgluecode;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import javax.persistence.EntityManager;
@@ -20,13 +19,14 @@ public class FindUserHostSteps {
 	
 	private FindUser userPO = new FindUser();
 	
-	@Before("@First")
+	@Before("@SearchHostFirst")
 	public void clearDataBaseAndCreateANewHostBeforeSecond() {
+		DataBaseHelper.clearDataBase("HOST");
+		//DataBaseHelper.clearDataBase("TRAVELER");
+		DataBaseHelper.clearDataBase("USER");
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("HostAbroad");
 		EntityManager em = emf.createEntityManager();
 		em.getTransaction().begin();
-		String query = "delete from hostabroad.USER";
-		em.createNativeQuery(query).executeUpdate();
 		em.persist(new User("Test",2.0,"Test description",true, true));
 		em.getTransaction().commit();
 		
@@ -34,14 +34,14 @@ public class FindUserHostSteps {
 		emf.close();
 	}
 	
-	@After("@First")
+	@After("@SearchHostFirst")
 	public void clearDataBaseAfterFirst(){
-		DataBaseHelper.clearDataBase();
+		DataBaseHelper.clearDataBase("USER");
 	}
 	
-	@Before("@Second")
+	@Before("@SearchHostSecond")
 	public void clearDataBaseBeforSecond() {
-		DataBaseHelper.clearDataBase();
+		DataBaseHelper.clearDataBase("USER");
 	}
 	
 	@Given("^el usuario navega hasta la pagina de search$")
@@ -67,18 +67,5 @@ public class FindUserHostSteps {
 	@Then("^mostrará mensaje indicando que no hay ningún anfitrión registrado\\.$")
 	public void mostrará_mensaje_indicando_que_no_hay_ningún_anfitrión_registrado() throws Throwable {
 	    assertTrue(this.userPO.checkEmptyResults());
-	}
-	
-	private void clearDataBase() {
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("HostAbroad");
-		EntityManager em = emf.createEntityManager();
-		em.getTransaction().begin();
-		String query = "delete from hostabroad.USER";
-		em.createNativeQuery(query).executeUpdate();
-		//don't know if it is needed
-		em.getTransaction().commit();
-		
-		em.close();
-		emf.close();
 	}
 }

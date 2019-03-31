@@ -39,6 +39,11 @@ public class FindUser extends PageObject{
 	}
 	
 	public boolean checkEmptyResults() {
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		this.resultNotification = this.findByCssSelector(RESULT_NOTIFICACION_CLASS);
 		String resultText = this.resultNotification.getText();
 		this.quitDriver();

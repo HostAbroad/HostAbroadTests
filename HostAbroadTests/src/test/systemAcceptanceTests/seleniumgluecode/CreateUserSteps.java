@@ -65,7 +65,6 @@ public class CreateUserSteps {
 	@When("^pulsa rechazar$")
 	public void CreateUser() throws Throwable {
 	    userPO.clickReset();
-	    
 	}
 
 	@Then("^se anularán los cambios$")

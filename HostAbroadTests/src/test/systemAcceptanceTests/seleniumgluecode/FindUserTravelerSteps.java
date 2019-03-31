@@ -19,13 +19,14 @@ public class FindUserTravelerSteps {
 	
 	private FindUser userPO = new FindUser();
 	
-	@Before("@First")
+	@Before("@SearchTravelerFirst")
 	public void clearDataBaseAndCreateANewHostBeforeSecond() {
+		DataBaseHelper.clearDataBase("HOST");
+		//DataBaseHelper.clearDataBase("TRAVELER");
+		DataBaseHelper.clearDataBase("USER");
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("HostAbroad");
 		EntityManager em = emf.createEntityManager();
 		em.getTransaction().begin();
-		String query = "delete from hostabroad.USER";
-		em.createNativeQuery(query).executeUpdate();
 		em.persist(new User("Test",2.0,"Test description",true, true));
 		em.getTransaction().commit();
 		
@@ -33,14 +34,14 @@ public class FindUserTravelerSteps {
 		emf.close();
 	}
 	
-	@After("@First")
+	@After("@SearchTravelerFirst")
 	public void clearDataBaseAfterFirst(){
-		DataBaseHelper.clearDataBase();
+		DataBaseHelper.clearDataBase("USER");
 	}
 	
-	@Before("@Second")
+	@Before("@SearchTravelerSecond")
 	public void clearDataBaseBeforSecond() {
-		DataBaseHelper.clearDataBase();
+		DataBaseHelper.clearDataBase("USER");
 	}
 	
 	@Given("^el usuario navega hasta la pagina de search viajero$")
