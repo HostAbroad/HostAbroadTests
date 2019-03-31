@@ -14,17 +14,26 @@ public class TUserTest {
 	@Test
 	public void test() {
 		TUser aux;
-		this.myUser = new TUser("Adri", 5, "pruebas para buscar un viajero", false, true);
+		this.myUser = new TUser("Adri", "Adrian", "adri@gmail.com", "adri1", 5, "pruebas para login", false, true);
 		
-		aux = new TUser("Jose", 2, "este se modifica", true, false);
+		aux = new TUser("Jose", "j", "j@a", "j1", 2, "este se modifica", true, false);
 		
 		aux.setNickname("Adri");
 		assertEquals(aux.getNickname(), this.myUser.getNickname());
 		
+		aux.setFullName("Adrian");
+		assertEquals(aux.getFullName(), this.myUser.getFullName());
+		
+		aux.setEmail("adri@gmail.com");
+		assertEquals(aux.getEmail(), this.myUser.getEmail());
+		
+		aux.setPassword("adri1");
+		assertEquals(aux.getPassword(), this.myUser.getPassword());
+		
 		aux.setRating(5);
 		assertEquals(aux.getRating(), this.myUser.getRating(), 2);
 		
-		aux.setDescription("pruebas para buscar un viajero");
+		aux.setDescription("pruebas para login");
 		assertEquals(aux.getDescription(), this.myUser.getDescription());
 		
 		aux.setHost(false);
