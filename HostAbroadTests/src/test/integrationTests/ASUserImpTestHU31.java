@@ -33,7 +33,7 @@ public class ASUserImpTestHU31 {
 	public void test() {
 		this.sauser = (ASUserImp) ASFactory.getInstance().createASUser();
 		
-		TUser user = new TUser("Adri", "Adrian45678", "adri1", "adri@gmail.com", "usuario viajero pero no mucho", "foto5", "perro", 5, false, true, null, null, null, null);
+		TUser user = new TUser("Adri", "Adrian45678", "adri1", "adri@gmail.com", "usuario viajero pero no mucho", "foto5", "perro", null, 5, false, true, null, null, null, null);
 		
 		this.sauser.modifyInformation(user);
 		
