@@ -6,7 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import com.business.User;
+import com.business.businessObjects.*;
 
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
@@ -22,12 +22,12 @@ public class FindUserTravelerSteps {
 	@Before("@SearchTravelerFirst")
 	public void clearDataBaseAndCreateANewHostBeforeSecond() {
 		DataBaseHelper.clearDataBase("HOST");
-		//DataBaseHelper.clearDataBase("TRAVELER");
-		DataBaseHelper.clearDataBase("USER");
+		DataBaseHelper.clearDataBase("TRAVELER");
+		DataBaseHelper.clearDataBase("USERHA");
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("HostAbroad");
 		EntityManager em = emf.createEntityManager();
 		em.getTransaction().begin();
-		em.persist(new User("Test",2.0,"Test description",true, true));
+		em.persist(new UserHA("Test",2.0,"Test description",true, true));
 		em.getTransaction().commit();
 		
 		em.close();
@@ -36,12 +36,12 @@ public class FindUserTravelerSteps {
 	
 	@After("@SearchTravelerFirst")
 	public void clearDataBaseAfterFirst(){
-		DataBaseHelper.clearDataBase("USER");
+		DataBaseHelper.clearDataBase("USERHA");
 	}
 	
 	@Before("@SearchTravelerSecond")
 	public void clearDataBaseBeforSecond() {
-		DataBaseHelper.clearDataBase("USER");
+		DataBaseHelper.clearDataBase("USERHA");
 	}
 	
 	@Given("^el usuario navega hasta la pagina de search viajero$")
