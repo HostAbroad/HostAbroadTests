@@ -7,12 +7,10 @@ import java.util.Date;
 
 import org.junit.Test;
 
-import com.business.FamilyUnit;
-import com.business.Host;
-import com.business.InterestsEnum;
-import com.business.Place;
-import com.business.TPlace;
-import com.business.User;
+import com.business.enums.FamilyUnit;
+import com.business.transfers.TPlace;
+
+
 
 public class TPlaceTest {
 	private TPlace myPlace;
@@ -21,7 +19,7 @@ public class TPlaceTest {
 	public void test() {
 		ArrayList<Date> noAvaliableDates = new ArrayList<Date>();
 		noAvaliableDates.add(new Date());
-		this.myPlace = new TPlace("calle piruleta", "dulce", noAvaliableDates, "foto", FamilyUnit.Fam1, "Adri");
+		this.myPlace = new TPlace("calle piruleta", "dulce", noAvaliableDates, "foto", FamilyUnit.Alone, "Adri");
 		
 		TPlace aux = new TPlace(null, null, null, null, null, null);
 		
@@ -37,7 +35,7 @@ public class TPlaceTest {
 		aux.setPhoto("foto");
 		assertEquals(aux.getPhoto(), this.myPlace.getPhoto());
 		
-		aux.setFamilyUnit(FamilyUnit.Fam1);
+		aux.setFamilyUnit(FamilyUnit.Alone);
 		assertEquals(aux.getFamilyUnit(), this.myPlace.getFamilyUnit());
 		
 		aux.setNickname("Adri");

@@ -9,18 +9,20 @@ import javax.persistence.Persistence;
 
 import org.junit.Test;
 
-import com.business.User;
+import com.business.businessObjects.UserHA;
+
+
 
 public class UserTestEditHost {
 
-	private User myUser;
+	private UserHA myUser;
 
 	@Test
 	public void test() {
-		User aux;
-		this.myUser = new User("Adri", "Adrian", "adri@gmail.com", "adri1", 5, "pruebas para login", true, false);
+		UserHA aux;
+		this.myUser = new UserHA("Adri", "Adrian", "adri@gmail.com", 1, 5, "pruebas para login", true, false);
 		
-		aux = new User("Jose", "j", "j@a", "j1", 2, "este se modifica", true, false);
+		aux = new UserHA("Jose", "j", "j@a", 1, 2, "este se modifica", true, false);
 		
 		aux.setNickname("Adri");
 		assertEquals(aux.getNickname(), this.myUser.getNickname());
@@ -31,7 +33,7 @@ public class UserTestEditHost {
 		aux.setEmail("adri@gmail.com");
 		assertEquals(aux.getEmail(), this.myUser.getEmail());
 		
-		aux.setPassword("adri1");
+		aux.setPassword(1);
 		assertEquals(aux.getPassword(), this.myUser.getPassword());
 		
 		aux.setRating(5);

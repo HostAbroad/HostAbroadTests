@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import com.business.TUser;
+import com.business.transfers.TUser;
 import com.business.ASFactory.ASFactory;
 import com.business.ASUser.ASUserImp;
 

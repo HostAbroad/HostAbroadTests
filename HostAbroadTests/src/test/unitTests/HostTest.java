@@ -11,9 +11,10 @@ import javax.persistence.Persistence;
 
 import org.junit.Test;
 
-import com.business.Host;
-import com.business.InterestsEnum;
-import com.business.User;
+import com.business.businessObjects.Host;
+import com.business.businessObjects.UserHA;
+import com.business.enums.InterestsEnum;
+
 
 public class HostTest {
 	private Host myHost;
@@ -21,11 +22,11 @@ public class HostTest {
 	@Test
 	public void test() {
 		ArrayList<InterestsEnum> intereses = new ArrayList<InterestsEnum>();
-		intereses.add(InterestsEnum.Int2);
-		User myUser = new User("Adri", "Adrian", "adri@gmail.com", "adri1", 5, "pruebas para login", true, false);
+		intereses.add(InterestsEnum.Animals);
+		UserHA myUser = new UserHA("Adri", "Adrian", "adri@gmail.com", 1, 5, "pruebas para login", true, false);
 		this.myHost = new Host(1, myUser, intereses);
 		
-		User aux_user = new User("Jose", "j", "j@a", "j1", 2, "este se modifica", false, true);
+		UserHA aux_user = new UserHA("Jose", "j", "j@a", 1, 2, "este se modifica", false, true);
 		Host aux_host = new Host(2, aux_user, null);
 		
 		aux_host.setId(1);

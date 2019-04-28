@@ -11,8 +11,7 @@ import org.junit.Test;
 
 import com.presentation.controller.Controller;
 import com.presentation.controller.ControllerImp;
-import com.business.TUser;
-import com.business.User;
+import com.business.transfers.TUser;
 import com.presentation.commands.*;
 import com.presentation.commands.CommandEnum.Commands;
 

@@ -5,8 +5,7 @@ import java.util.ArrayList;
 
 import org.junit.Test;
 
-import com.business.TUser;
-import com.business.User;
+import com.business.transfers.TUser;
 import com.presentation.commands.CommandEnum.Commands;
 import com.presentation.commands.CommandLogin;
 import com.presentation.commands.Pair;
