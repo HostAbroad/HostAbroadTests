@@ -17,6 +17,6 @@ Feature: Editar usuario.
         When el usuario no registrado pulse en registrar
         And rellena los campos nombre completo, usuario, email, género, lenguaje y descripción incorrectamente
         And pulsa guardar
-        Then se guardarán los cambios
+        Then se mostrará mensaje de error
 
     
