@@ -13,9 +13,9 @@ public class TUserTestHU31 {
 
 	@Test
 	public void test() {
-		this.myUser = new TUser("Adri", "Adrian", "adri1", "adri@gmail.com", "usuario viajero", "foto1", "m", 5, false, true, null, null, null, null);
+		this.myUser = new TUser("Adri", "Adrian", "adri1", "adri@gmail.com", "usuario viajero", "foto1", "m", null, 5, false, true, null, null, null, null);
 		
-		TUser aux = new TUser("Jose", "j", "j1", "j@a", "usuario anfitrion", "foto2", "f",  2, true, false, null, null, null, null);
+		TUser aux = new TUser("Jose", "j", "j1", "j@a", "usuario anfitrion", "foto2", "f",  null, 2, true, false, null, null, null, null);
 		
 		aux.setNickname("Adri");
 		assertEquals(aux.getNickname(), this.myUser.getNickname());

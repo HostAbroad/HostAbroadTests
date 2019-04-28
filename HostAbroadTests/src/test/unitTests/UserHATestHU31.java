@@ -29,8 +29,8 @@ public class UserHATestHU31 {
 	public void test() {
 		
 		UserHA user1, user2;
-		user1 = new UserHA("Adri", "Adrian", "adri@gmail.com", 1234, 5.0, "usuario viajero", "foto1", "m", false, true, null, null, null, null, null, null);
-		user2 = new UserHA("Jose", "j", "j@a", 5678, 2, "usuario anfitrion", "foto2", "f", true, false, null, null, null, null, null, null);
+		user1 = new UserHA("Adri", "Adrian", "adri@gmail.com", 1234, 5.0, "usuario viajero", "foto1", "m", null, false, true, null, null, null, null, null, null, null);
+		user2 = new UserHA("Jose", "j", "j@a", 5678, 2, "usuario anfitrion", "foto2", "f", null, true, false, null, null, null, null, null, null, null);
 		
 		ArrayList<CountriesEnum> listOfCountries = new ArrayList<CountriesEnum>();
 		listOfCountries.add(CountriesEnum.Austria);

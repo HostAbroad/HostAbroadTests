@@ -18,7 +18,7 @@ public class ControllerImpTestHU31 {
 		this.controlador = (ControllerImp) Controller.getInstance();
 		
 		Pair<Integer, Object>  pair, command_pair;
-		TUser user = new TUser("Adri", "Adrian45678", "adri1", "adri@gmail.com", "usuario viajero pero no mucho", "foto5", "perro", 5, false, true, null, null, null, null);
+		TUser user = new TUser("Adri", "Adrian45678", "adri1", "adri@gmail.com", "usuario viajero pero no mucho", "foto5", "perro", null, 5, false, true, null, null, null, null);
 		
 		command_pair = this.controlador.action(Commands.CommandModifyBasicInformation, user);
 		pair = new Pair(1, true);
