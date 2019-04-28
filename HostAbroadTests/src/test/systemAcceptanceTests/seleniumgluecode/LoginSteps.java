@@ -25,7 +25,7 @@ public class LoginSteps {
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("HostAbroad");
 		EntityManager em = emf.createEntityManager();
 		em.getTransaction().begin();
-		String query = "delete from hostabroad.USER";
+		String query = "delete from hostabroad.USERHA";
 		em.createNativeQuery(query).executeUpdate();
 		em.persist(new UserHA("test", "Test name","test@test.com", 123));
 		em.getTransaction().commit();
