@@ -6,8 +6,8 @@ import java.util.ArrayList;
 
 import org.junit.Test;
 
-import com.business.InterestsEnum;
-import com.business.THost;
+import com.business.enums.InterestsEnum;
+import com.business.transfers.THost;
 import com.presentation.commands.CommandEnum.Commands;
 import com.presentation.commands.Pair;
 import com.presentation.controller.Controller;
@@ -23,7 +23,7 @@ private ControllerImp controlador;
 		Pair<Integer, Object>  pair, command_pair;
 		
 		ArrayList<InterestsEnum> intereses = new ArrayList<InterestsEnum>();
-		intereses.add(InterestsEnum.Int2);
+		intereses.add(InterestsEnum.Animals);
 		THost new_host = new THost("Adri", intereses);
 		
 		command_pair = this.controlador.action(Commands.CommandEditHost, new_host);

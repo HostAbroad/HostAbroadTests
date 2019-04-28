@@ -11,22 +11,24 @@ import javax.persistence.Persistence;
 
 import org.junit.Test;
 
-import com.business.TUser;
-import com.business.User;
-import com.presentation.commands.CommandSearchHost;
+
+
+import com.business.businessObjects.UserHA;
+import com.business.transfers.TUser;
+import com.presentation.commands.CommandSearch;
 import com.presentation.commands.Pair;
 
 public class CommandSearchHostTest {
-	private CommandSearchHost commandsh;
+	private CommandSearch commandsh;
 
 	@Test
 	public void test() {
-		this.commandsh = new CommandSearchHost();
+		this.commandsh = new CommandSearch();
 		
 		Pair<Integer, Object> pair, command_pair;
-		ArrayList<User> original_list = new ArrayList<User>();
+		ArrayList<UserHA> original_list = new ArrayList<UserHA>();
 		ArrayList<TUser> command_list;
-		User yo = new User("Jose", 5, "pruebas para buscar un host", true, false);
+		UserHA yo = new UserHA("Jose", 5, "pruebas para buscar un host", true, false);
 		
 		//Para crear un nuevo host en la base de datos manualmente
 //		EntityManagerFactory emf = Persistence.createEntityManagerFactory("HostAbroad");

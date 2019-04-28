@@ -7,8 +7,8 @@ import java.util.Date;
 
 import org.junit.Test;
 
-import com.business.FamilyUnit;
-import com.business.TPlace;
+import com.business.enums.FamilyUnit;
+import com.business.transfers.TPlace;
 import com.presentation.commands.CommandEnum.Commands;
 import com.presentation.commands.Pair;
 import com.presentation.controller.Controller;
@@ -24,7 +24,7 @@ public class ControllerImpTestPlace {
 		Pair<Integer, Object>  pair, command_pair;
 		ArrayList<Date> noAvaliableDates = new ArrayList<Date>();
 		noAvaliableDates.add(new Date());
-		TPlace myPlace = new TPlace("calle pirata", "pirata", noAvaliableDates, "foto", FamilyUnit.Fam2, "Adri");
+		TPlace myPlace = new TPlace("calle pirata", "pirata", noAvaliableDates, "foto", FamilyUnit.Alone, "Adri");
 		
 		command_pair = this.controlador.action(Commands.CommandAddPlace, myPlace);
 		//este par significa que la modificacion se ha realizado correctamente

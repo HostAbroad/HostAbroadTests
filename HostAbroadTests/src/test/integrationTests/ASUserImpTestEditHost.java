@@ -11,11 +11,9 @@ import javax.persistence.Persistence;
 
 import org.junit.Test;
 
-import com.business.Host;
-import com.business.InterestsEnum;
-import com.business.THost;
-import com.business.TUser;
-import com.business.User;
+import com.business.businessObjects.*;
+import com.business.enums.InterestsEnum;
+import com.business.transfers.THost;
 import com.business.ASFactory.ASFactory;
 import com.business.ASSearch.ASSearchImp;
 import com.business.ASUser.ASUserImp;
@@ -30,7 +28,7 @@ private ASSearchImp sasearch;
 		this.sasearch = (ASSearchImp) ASFactory.getInstance().createASSearch();
 		
 		ArrayList<InterestsEnum> intereses = new ArrayList<InterestsEnum>();
-		intereses.add(InterestsEnum.Int3);
+		intereses.add(InterestsEnum.Animals);
 		THost myHost = new THost("Adri", intereses);
 		Host new_host = new Host(intereses);
 		
@@ -41,7 +39,7 @@ private ASSearchImp sasearch;
 		EntityTransaction t = em.getTransaction();
 		t.begin();
 		
-		User user = em.find(User.class, myHost.getNickname());
+		UserHA user = em.find(UserHA.class, myHost.getNickname());
 		
 		em.close();
 		emfactory.close();

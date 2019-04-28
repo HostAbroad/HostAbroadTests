@@ -6,10 +6,10 @@ import java.util.ArrayList;
 
 import org.junit.Test;
 
-import com.business.Host;
-import com.business.InterestsEnum;
-import com.business.THost;
-import com.business.User;
+import com.business.enums.InterestsEnum;
+import com.business.transfers.THost;
+
+
 
 public class THostTest {
 private THost myHost;
@@ -17,7 +17,7 @@ private THost myHost;
 	@Test
 	public void test() {
 		ArrayList<InterestsEnum> intereses = new ArrayList<InterestsEnum>();
-		intereses.add(InterestsEnum.Int1);
+		intereses.add(InterestsEnum.Animals);
 		this.myHost = new THost("Adri", intereses);
 		
 		THost aux_host = new THost("Pedro", null);
