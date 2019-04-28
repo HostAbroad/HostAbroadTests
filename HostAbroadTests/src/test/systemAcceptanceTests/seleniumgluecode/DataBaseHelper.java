@@ -4,7 +4,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import com.business.User;
 
 public class DataBaseHelper {
 
@@ -34,7 +33,7 @@ public class DataBaseHelper {
         em.createNativeQuery(query).executeUpdate();
         query = "delete from HOSTABROAD.Likes";
         em.createNativeQuery(query).executeUpdate();
-        query = "delete from HOSTABROAD.User";
+        query = "delete from HOSTABROAD.UserHA";
         em.createNativeQuery(query).executeUpdate();
         //don't know if it is needed
         em.getTransaction().commit();

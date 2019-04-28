@@ -6,7 +6,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import com.business.User;
+
+import com.business.businessObjects.UserHA;
 
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
@@ -27,7 +28,7 @@ public class FindUserTravelerSteps {
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("HostAbroad");
 		EntityManager em = emf.createEntityManager();
 		em.getTransaction().begin();
-		em.persist(new User("Test",2.0,"Test description",true, true));
+		em.persist(new UserHA("Test",2.0,"Test description",true, true));
 		em.getTransaction().commit();
 		
 		em.close();
