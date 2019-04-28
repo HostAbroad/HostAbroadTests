@@ -16,8 +16,8 @@ public class FactoryCommandImpTest {
 	public void test() {
 		this.fcommand = (FactoryCommandImp) FactoryCommand.getInstance();
 		
-		Command cst = new CommandSearchTraveler();
-		Command cst_return = this.fcommand.parseCommand(Commands.CommandSearchTraveler);
+		Command cst = new CommandSearch();
+		Command cst_return = this.fcommand.parseCommand(Commands.CommandSearch);
 		
 		cst.setEventReturn(0);
 		

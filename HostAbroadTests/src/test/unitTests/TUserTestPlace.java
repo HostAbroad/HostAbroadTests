@@ -4,7 +4,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import com.business.TUser;
+import com.business.transfers.TUser;
+
 
 public class TUserTestPlace {
 	private TUser myUser;

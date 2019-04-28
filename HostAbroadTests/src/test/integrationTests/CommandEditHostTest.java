@@ -6,8 +6,10 @@ import java.util.ArrayList;
 
 import org.junit.Test;
 
-import com.business.InterestsEnum;
-import com.business.THost;
+
+
+import com.business.enums.InterestsEnum;
+import com.business.transfers.THost;
 import com.presentation.commands.CommandEditHost;
 import com.presentation.commands.Pair;
 
@@ -20,8 +22,8 @@ private CommandEditHost command;
 		Pair<Integer, Object>  pair, command_pair;
 		
 		ArrayList<InterestsEnum> intereses = new ArrayList<InterestsEnum>();
-		intereses.add(InterestsEnum.Int3);
-		intereses.add(InterestsEnum.Int1);
+		intereses.add(InterestsEnum.Animals);
+		intereses.add(InterestsEnum.Arts);
 		THost new_host = new THost("Adri", intereses);
 		
 		command_pair = this.command.execute(new_host);

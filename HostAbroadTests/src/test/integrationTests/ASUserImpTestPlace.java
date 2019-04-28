@@ -12,11 +12,9 @@ import javax.persistence.Persistence;
 
 import org.junit.Test;
 
-import com.business.FamilyUnit;
-import com.business.Host;
-import com.business.Place;
-import com.business.TPlace;
-import com.business.User;
+import com.business.businessObjects.*;
+import com.business.enums.FamilyUnit;
+import com.business.transfers.TPlace;
 import com.business.ASFactory.ASFactory;
 import com.business.ASUser.ASUserImp;
 
@@ -29,7 +27,7 @@ public class ASUserImpTestPlace {
 		
 		ArrayList<Date> noAvaliableDates = new ArrayList<Date>();
 		noAvaliableDates.add(new Date());
-		TPlace myPlace = new TPlace("calle piruleta", "dulce", noAvaliableDates, "foto", FamilyUnit.Fam1, "Adri");
+		TPlace myPlace = new TPlace("calle piruleta", "dulce", noAvaliableDates, "foto", FamilyUnit.Alone, "Adri");
 		
 		this.sauser.addPlace(myPlace);
 		
@@ -39,7 +37,7 @@ public class ASUserImpTestPlace {
 		t.begin();
 		
 		Place place = em.find(Place.class, myPlace.getAddress());
-		Host host = em.find(User.class, myPlace.getNickname()).getHostEntity();
+		Host host = em.find(UserHA.class, myPlace.getNickname()).getHostEntity();
 		
 		em.close();
 		emfactory.close();

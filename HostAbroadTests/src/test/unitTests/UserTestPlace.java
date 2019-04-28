@@ -9,17 +9,18 @@ import javax.persistence.Persistence;
 
 import org.junit.Test;
 
-import com.business.User;
+import com.business.businessObjects.UserHA;
+
 
 public class UserTestPlace {
-	private User myUser;
+	private UserHA myUser;
 	
 	@Test
 	public void test() {
-		User aux;
-		this.myUser = new User("Adri", "Adrian", "adri@gmail.com", 1234, 5, "pruebas para login", true, false);
+		UserHA aux;
+		this.myUser = new UserHA("Adri", "Adrian", "adri@gmail.com", 1234, 5, "pruebas para login", true, false);
 		
-		aux = new User("Jose", "j", "j@a", 5678, 2, "este se modifica", true, false);
+		aux = new UserHA("Jose", "j", "j@a", 5678, 2, "este se modifica", true, false);
 		
 		aux.setNickname("Adri");
 		assertEquals(aux.getNickname(), this.myUser.getNickname());
